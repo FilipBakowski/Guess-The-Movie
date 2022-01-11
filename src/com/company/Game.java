@@ -14,7 +14,12 @@ public class Game {
     public Game(Scanner input){
         this.input = input;
     }
-    public boolean loadListOfMoviesAndSelect(){
+
+    /**
+     * loadListOfMovies loads list movies from movies.txt in parent directory
+     * @return true if list of movies was loaded correct
+     */
+    public boolean loadListOfMovies(){
         try{
             File parentDir = new File(".").getParentFile();
             File moviesListFile = new File(parentDir, "movies.txt");
@@ -30,6 +35,10 @@ public class Game {
         }
         return false;
     }
+
+    /**
+     * processes single game
+     */
     public void startGame() {
         this.score = 10;
         if (moviesList.size() <= 0) {

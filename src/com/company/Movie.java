@@ -1,8 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Movie {
 
     private String movieName;
@@ -29,6 +26,13 @@ public class Movie {
         return guessedLetters;
     }
 
+    public String getWrongGuesses(){ return wrongGuesses; }
+
+    /**
+     * Guesses single letter in movie name
+     * @param letter
+     * @return true if guess is correct or letter was used earlier
+     */
     public boolean guessLetter(Character letter){
         letter = Character.toLowerCase(letter);
         if(!Character.isLowerCase(letter)) {
@@ -58,13 +62,14 @@ public class Movie {
         return guessed;
     }
 
+    /**
+     * checks win conditions
+     * @return true if won all letter were guessed
+     */
     public boolean checkWin(){
         if(movieName.equals(guessedLetters)){
             return true;
         }
         return false;
-    }
-    public String getWrongGuesses(){
-        return wrongGuesses;
     }
 }

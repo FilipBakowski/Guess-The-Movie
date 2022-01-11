@@ -1,7 +1,5 @@
 package com.company;
 
-import java.awt.event.KeyEvent;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -9,7 +7,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 	    Game game = new Game(input);
-        if(!game.loadListOfMoviesAndSelect()){
+        if(!game.loadListOfMovies()){
+            System.out.println("Couldn't load file with movies.");
             return;
         }
         while(true) {
